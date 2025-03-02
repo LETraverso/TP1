@@ -20,13 +20,19 @@
 
 <body>
   <header class="header">
+  <nav class="navbar navbar-expand-lg">
+    <!-- Icono -->
+    <a class="navbar-brand" href="#">
+      <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/tree.svg" alt="Árbol">
+    </a>
 
-    <nav class="navbar navbar-expand-lg">
-      <!-- Icono -->
-      <a class="navbar-brand" href="#">
-        <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/tree.svg" alt="Árbol">
-      </a>
+    <!-- Botón hamburguesa de Bootstrap -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
+    <div class="collapse navbar-collapse" id="navbarNav">
       <div class="search-container">
         <form class="search-bar" role="search">
           <input class="form-control" type="search" placeholder="Buscar..." aria-label="Buscar">
@@ -39,14 +45,16 @@
           <li class="nav-item"><a class="nav-link text-dark" href="./Pages/envios.html">Envíos</a></li>
         </ul>
       </div>
+    </div>
 
-      <!-- Carrito de compras -->
-      <a class="cart-icon" href="#">
-        <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/cart4.svg" alt="Carrito">
-      </a>
-    </nav>
-  </header>
-  
+    <!-- Carrito de compras -->
+    <a class="cart-icon" href="#">
+      <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/cart4.svg" alt="Carrito">
+    </a>
+  </nav>
+
+</header>
+
   <main class="fondo-main">
     <div class="div-titulo">
       <h1 class="titulos">NALA</h1>
@@ -94,7 +102,7 @@
             Un hogar bien decorado refleja la personalidad de quienes lo habitan y aporta comodidad en la vida diaria.
             La correcta elección de colores, texturas y mobiliario define el carácter de cada espacio. Además, un diseño
             bien pensado optimiza la distribución, mejora la circulación y crea una atmósfera acogedora. La iluminación
-            y los materiales utilizados también juegan un papel fundamental en la percepción del espacio t.</p>
+            y los materiales utilizados también juegan un papel fundamental en la percepción del espacio.</p>
         </div>
         <div class="parrafo">
           <p>El mobiliario es el corazón de cualquier espacio, aportando funcionalidad y estética. En el salón, los
@@ -149,9 +157,10 @@
   </footer>
 
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
