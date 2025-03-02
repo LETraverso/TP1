@@ -465,6 +465,12 @@ body {
     transform: translateY(-5px);
 }
 
+@media (max-width: 768px) {
+    .venta-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
 /* PAGINA 5 */
 
 
