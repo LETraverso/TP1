@@ -24,7 +24,7 @@
     text-decoration: solid;
     font-size: 20px;
     letter-spacing: 6px;
-
+    margin: 30px
 }
 
 .contenedor-parrafos {
@@ -118,54 +118,38 @@ body {
   }
   
   .cart-icon img {
-    width: 40px;
-    height: 40px;
+    width: 70px;
+    height: 70px;
   }
   
+  /* MEDIA QUERY NAVBAR  */
+
   @media (max-width: 992px) {
-    .nav-links {
-      display: none;
-      flex-direction: column !important;
-      position: absolute;
-      top: 80px; 
-      left: 0;
-      width: 100%;
-      background-color: #fff;
-      padding: 15px 0;
-      gap: 10px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-      border-radius: 0 0 10px 10px;
-      z-index: 1000;
-      transition: opacity 0.3s ease;
-      opacity: 0;
+    /* Ocultar el icono de marca y el carrito */
+    .navbar-brand,
+    .cart-icon {
+      display: none !important;
     }
-    
-    .nav-links.active {
-      display: flex;
-      opacity: 1;
-    }
-    
-    .menu-toggle {
-      display: block;
-      background: none;
-      border: none;
-      cursor: pointer;
-      outline: none;
-    }
-    
-    .menu-toggle img {
-      width: 30px;
-      height: 30px;
-    }
-  }
   
-  @media (min-width: 993px) {
-    .menu-toggle {
-      display: none;
+    /* Mostrar los enlaces en columna sin fondo blanco */
+    .nav-links {
+      display: flex !important;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      gap: 20px;
+      background-color: transparent; /* Sin fondo blanco */
+      padding: 0; /* Sin padding */
+    }
+  
+    .nav-links .nav-link {
+      font-size: 18px; /* Fuente más grande y llamativa */
+      font-family: 'Arial', sans-serif;
+      padding: 10px 0;
+      color: #333;
+      text-decoration: none;
     }
   }
-
-
 
 .footer {
     margin: 0%;
@@ -359,10 +343,6 @@ body {
 
 /* PAGINA 3 */
 
-
-.titulo3 {
-    font-size: 50px;
-}
 
 .gallery {
     display: grid;
@@ -569,15 +549,6 @@ body {
 }
 
 
-@media (max-width: 992px) {
-    .nav-links {
-        display: none;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-}
 
 @media (min-width: 1024px) {
     .contenedor-parrafos {
