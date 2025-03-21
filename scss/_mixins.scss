@@ -1,0 +1,29 @@
+@mixin flex-container($justify: center, $align: center, $direction: row) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+  }
+  
+  @mixin transition($props) {
+    transition: $props $transition-time;
+  }
+  
+  @mixin box-shadow($shadow) {
+    -webkit-box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
+    box-shadow: $shadow;
+  }
+  
+  @mixin bg-cover($gradient, $imgUrl) {
+    background-image: $gradient, url($imgUrl);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  @mixin grid-container($cols, $gap: 20px) {
+    display: grid;
+    grid-template-columns: $cols;
+    gap: $gap;
+  }

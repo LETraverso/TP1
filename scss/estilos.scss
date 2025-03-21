@@ -1,11 +1,28 @@
+@import 'variables';
+@import 'mixins';
+
+// EXTEND
+
+%text-center {
+    text-align: center;
+}
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
+body {
+    filter: contrast(85%);
+    display: flex;
+    flex-direction: column;
+    font-family: $font-base;
+    height: 100%;
+}
+
 .titulos {
-    text-align: center;
+    @extend %text-center;
     font-size: 80px;
     letter-spacing: 10px;
     font-weight: 800;
@@ -13,14 +30,14 @@
 }
 
 .div-titulo {
-    font-family: "Abril Fatface", serif;
+    font-family: $font-title;
     font-weight: 400;
     font-style: normal;
 }
 
 .subtitulo {
-    font-family: Arial, sans-serif;
-    text-align: center;
+    font-family: $font-base;
+    @extend %text-center;
     text-decoration: solid;
     font-size: 20px;
     letter-spacing: 6px;
@@ -28,67 +45,42 @@
 }
 
 .contenedor-parrafos {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 40px;
+    @include grid-container(1fr, 40px);
     max-width: 80%;
     margin: 50px auto;
 }
 
 .parrafo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex-container(center, center);
     padding: 40px;
     background: rgba(255, 255, 255, 0.05);
     letter-spacing: 1px;
     border-radius: 15px;
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+    @include box-shadow(0px 6px 15px rgba(0, 0, 0, 0.3));
     text-align: center;
     backdrop-filter: blur(10px);
 }
 
-body {
-
-    filter: contrast(85%);
-    display: flex;
-    flex-direction: column;
-    font-family: Arial, sans-serif;
-    height: 100%;
-}
-
 .fondo-main {
     margin-bottom: 0;
-    background-image: linear-gradient(to bottom,
-            rgba(255, 255, 255, 0),
-            rgba(255, 255, 255, 0.2)),
-        url(../Fondos/fondopagina1.jpg);
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.2)), url(../Fondos/fondopagina1.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-
+// NAVBAR Y FOOTER BACKGROUND
 .navbar,
 .footer {
-    margin: 0%;
     padding-top: 80px;
     height: 100%;
-    background-image: linear-gradient(to bottom,
-            rgba(255, 255, 255, 0.3),
-            rgba(255, 255, 255, 0)),
-        url(../Fondos/fondofooternav.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    @include bg-cover(linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0)), "../Fondos/fondofooternav.jpg");
 }
 
 // NAVBAR
 .navbar {
     height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include flex-container(space-between, center, row);
     width: 100%;
     padding: 30px;
 
@@ -100,9 +92,7 @@ body {
     }
 
     .search-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        @include flex-container(center, center, column);
         flex-grow: 1;
 
         .search-bar {
@@ -140,7 +130,6 @@ body {
         }
     }
 
-    // Media query para mobile
     @media (max-width: 992px) {
 
         .navbar-brand,
@@ -159,9 +148,9 @@ body {
 
             .nav-link {
                 font-size: 15px;
-                font-family: 'Arial', sans-serif;
+                font-family: $font-base;
                 padding: 5px 0;
-                color: #333;
+                color: $primary-color; // Define $primary-color, por ejemplo: $primary-color: #333;
                 text-decoration: none;
                 width: 100%;
                 text-align: center;
@@ -173,12 +162,10 @@ body {
 // FOOTER
 .footer {
     margin: 0;
-    background-color: #A3DAFF;
+    background-color: $footer-bg;
     width: 100%;
     padding: 20px 40px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include flex-container(space-between, center, row);
 
     .iconos-redes {
         display: flex;
@@ -192,12 +179,12 @@ body {
     }
 
     .contacto-info {
-        text-align: center;
+        @extend %text-center;
         font-size: 20px;
     }
 
     .atencion-publico {
-        text-align: center;
+        @extend %text-center;
         font-size: 20px;
         max-width: 250px;
         word-wrap: break-word;
@@ -217,6 +204,7 @@ body {
             border-radius: 20px;
             height: 600px;
             object-fit: cover;
+            @include transition(opacity);
 
             &:hover {
                 opacity: 1;
@@ -232,13 +220,10 @@ body {
     }
 }
 
-//PAGINA 2
-
+// PAGINA 2
 .contenedor {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    @include grid-container(1fr 1fr, 20px);
     grid-template-rows: auto auto auto;
-    gap: 20px;
     width: 80%;
     max-width: 1400px;
     margin: 40px auto;
@@ -255,15 +240,13 @@ body {
     .parrafo1 {
         grid-column: 2;
         grid-row: 1;
-        display: flex;
-        align-items: center;
+        @include flex-container(center, center, row);
     }
 
     .parrafo2 {
         grid-column: 1;
         grid-row: 2;
-        display: flex;
-        align-items: center;
+        @include flex-container(center, center, row);
     }
 
     .img2 {
@@ -343,22 +326,19 @@ body {
 }
 
 // PAGINA 3
-
 .gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 35px;
+    @include grid-container(repeat(3, 1fr), 35px);
     margin: 30px;
 
     .gallery-item {
         background: #fff;
         border-radius: 5px;
         overflow: hidden;
-        transition: transform 0.3s, box-shadow 0.3s;
+        @include transition(transform, box-shadow);
 
         &:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            @include box-shadow(0 8px 16px rgba(0, 0, 0, 0.2));
         }
 
         img {
@@ -369,13 +349,13 @@ body {
 
         .info {
             padding: 10px;
-            background: var(--secondary-color);
-            text-align: center;
+            background: $secondary-color;
+            @extend %text-center;
 
             .price {
                 font-weight: bold;
                 font-size: 1.1em;
-                color: var(--primary-color);
+                color: $primary-color;
                 margin: 5px 0;
             }
 
@@ -394,8 +374,7 @@ body {
     }
 }
 
-//   PAGINA 4
-
+// PAGINA 4
 .container3 {
     margin: 30px;
     width: calc(100% - 60px);
@@ -416,58 +395,24 @@ body {
             }
         }
 
-        .img-side {
+        .img-side,
+        .img-center {
             width: 100%;
-            height: 350px;
             object-fit: cover;
-            border: 2px solid #000;
-            transition: transform 0.3s;
+            @include transition(transform);
+        }
+
+        .img-side {
+            height: 350px;
         }
 
         .img-center {
-            width: 100%;
             height: 500px;
-            object-fit: cover;
-            border: 2px solid #000;
-            transition: transform 0.3s;
         }
     }
 }
 
-.venta-container {
-    padding-top: 100px;
-    margin: 30px;
-    width: calc(100% - 60px);
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 20px;
-
-    .venta-item {
-        text-align: center;
-
-        img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            transition: transform 0.3s;
-
-            &:hover {
-                transform: translateY(-5px);
-            }
-        }
-    }
-}
-
-@media (max-width: 768px) {
-    .venta-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-//PAGINA 5
-
+// PAGINA 5
 .main-container {
     width: 100%;
     max-width: 1200px;
@@ -484,14 +429,14 @@ body {
         padding: 20px;
         background: radial-gradient(circle at center, #f9f9f9 0%, #eaeaea 100%);
         border-radius: 15px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        @include box-shadow(0 4px 15px rgba(0, 0, 0, 0.2));
 
         img {
             max-width: 100%;
             height: 700px;
             border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s;
+            @include box-shadow(0 2px 10px rgba(0, 0, 0, 0.2));
+            @include transition(transform);
         }
     }
 }
@@ -514,7 +459,7 @@ form.description {
         background-color: #fff;
         padding: 20px;
         border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        @include box-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
     }
 }
 
