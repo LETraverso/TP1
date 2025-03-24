@@ -20,33 +20,44 @@
 
   <header class="header">
     <nav class="navbar navbar-expand-lg">
-      <!-- Icono -->
+      <!--desktop -->
       <a class="navbar-brand" href="#">
         <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/tree.svg" alt="Árbol">
       </a>
 
-      <div class="navbar" id="navbarNav">
-        <div class="search-container">
-          <form class="search-bar" role="search">
-            <input class="form-control" type="search" placeholder="Buscar..." aria-label="Buscar">
-          </form>
-          <ul class="nav-links navbar-nav flex-row">
-            <li class="nav-item"><a class="nav-link text-dark" href="#">Inicio</a></li>
-            <li class="nav-item"><a class="nav-link text-dark" href="./Pages/muebles.html">Muebles</a></li>
-            <li class="nav-item"><a class="nav-link text-dark" href="./Pages/sillones.html">Sillones</a>
-            </li>
-            <li class="nav-item"><a class="nav-link text-dark" href="./Pages/decoracion.html">Decoración</a>
-            </li>
-            <li class="nav-item"><a class="nav-link text-dark" href="./Pages/envios.html">Envíos</a></li>
-          </ul>
-        </div>
+      <div class="search-container">
+        <form class="search-bar" role="search">
+          <input class="form-control" type="search" placeholder="Buscar..." aria-label="Buscar">
+        </form>
+        <ul class="nav-links navbar-nav flex-row">
+          <li class="nav-item"><a class="nav-link text-dark" href="#">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link text-dark" href="./Pages/muebles.html">Muebles</a></li>
+          <li class="nav-item"><a class="nav-link text-dark" href="./Pages/sillones.html">Sillones</a></li>
+          <li class="nav-item"><a class="nav-link text-dark" href="./Pages/decoracion.html">Decoración</a></li>
+          <li class="nav-item"><a class="nav-link text-dark" href="./Pages/envios.html">Envíos</a></li>
+        </ul>
       </div>
 
-      <!-- Carrito de compras -->
       <a class="cart-icon" href="#">
         <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/cart4.svg" alt="Carrito">
       </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mobileMenu"
+        aria-controls="mobileMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
     </nav>
+
+    <div class="collapse" id="mobileMenu">
+      <ul class="mobile-nav-links">
+        <li class="nav-item"><a class="nav-link text-dark" href="#">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link text-dark" href="./Pages/muebles.html">Muebles</a></li>
+        <li class="nav-item"><a class="nav-link text-dark" href="./Pages/sillones.html">Sillones</a></li>
+        <li class="nav-item"><a class="nav-link text-dark" href="./Pages/decoracion.html">Decoración</a></li>
+        <li class="nav-item"><a class="nav-link text-dark" href="./Pages/envios.html">Envíos</a></li>
+      </ul>
+    </div>
+
 
   </header>
 
@@ -155,7 +166,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
 </body>
 
 </html>
