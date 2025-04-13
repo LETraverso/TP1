@@ -1,4 +1,4 @@
-@mixin flex-container($justify: center, $align: center, $direction: row) {
+@mixin flex-container($justify: center, $align: center, $direction: column) {
     display: flex;
     justify-content: $justify;
     align-items: $align;
@@ -27,3 +27,4 @@
     grid-template-columns: $cols;
     gap: $gap;
   }
+
